@@ -1,0 +1,69 @@
+\documentclass{beamer}
+% \usetheme{Frankfurt}
+% \usecolortheme{default}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc} % this is needed for german umlauts
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}    % this is needed for correct output of umlauts in pdf
+
+\title{Practical of CV:HCI}
+\subtitle{WS 2016 / 2017}
+\author[Martin\,Thoma \& Bettina\,Weller\& Yang\,Zhang]
+{%
+  \texorpdfstring{
+    \begin{columns}%[onlytextwidth]
+      \column{.30\linewidth}
+      \centering
+      Martin Thoma\      \href{mailto:info@martin-thoma.de}{info@martin-thoma.de}
+      \column{.30\linewidth}
+      \centering
+      Bettina Weller\    %\href{mailto:jane.doe@example.com}{jane.doe@example.com}
+      \column{.30\linewidth}
+      \centering
+      Yang Zhang\    %\href{mailto:jane.doe@example.com}{jane.doe@example.com}
+    \end{columns}
+  }
+  {John Doe \& Jane Doe}
+}
+\date{16. January 2017}
+\subject{Computer Science}
+
+\begin{document}
+\setbeamertemplate{navigation symbols}{}
+\frame{\titlepage}
+
+\begin{frame}{1st Assignment: Color-based skin classifier}
+    \begin{itemize}
+        \item Idea: Histogramm-based approach
+        \item HSV color space
+        \item $256 \times 256$ bins (H and S, V is ommitted)
+        \item $p_\text{Skin}(H, V) = \frac{\text{\# skin pixels in bin } (H, V)}{\text{\# skin pixels in bin } (H, V) + \text{\# non-skin pixels in bin } (H, V)}$
+        \item Don't forget to multiply $p_\text{Skin}(H, V)$ with 256.
+        \item[$\Rightarrow$] $F_1 = 0.860325$ (\# 8)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{2nd Assignment: Person detector}
+    \begin{itemize}
+        \item Idea: Fiddle around with parameters
+        \item \texttt{hog.blockStride = Size(16, 28)}
+        \item \texttt{hog.nbins = 60}
+        \item[$\Rightarrow$] $F_1 = 0.945133$ (\# 13), 13.409s (\#4)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{3rd Assignment: Train a FACE Similitude Measure}
+    \begin{itemize}
+        \item Idea: PCA + Distance measure
+        \item Distance measure
+        \begin{itemize}
+            \item Euclidean distance was good
+            \item Cosine distance gave EER of 0.5
+        \end{itemize}
+        \item Preprocessing: Crop image to middle 90\%; flatten RGB image
+        \item 100 components, only first 200 images because of server speed
+        \item[$\Rightarrow$] $1- \text{EER} = 0.570645$ (\# 5)
+    \end{itemize}
+\end{frame}
+
+\end{document}

@@ -17,10 +17,10 @@
       Martin Thoma\      \href{mailto:info@martin-thoma.de}{info@martin-thoma.de}
       \column{.30\linewidth}
       \centering
-      Bettina Weller\    \href{bettinaweller@web.de}{bettinaweller@web.de}
+      Bettina Weller\\    \href{bettinaweller@web.de}{bettinaweller@web.de}
       \column{.30\linewidth}
       \centering
-      Yang Zhang\    %\href{mailto:jane.doe@example.com}{jane.doe@example.com}
+      Yang Zhang\\    \href{yang.zhang@student.kit.edu}{yang.zhang@student.kit.edu}
     \end{columns}
   }
   {John Doe \& Jane Doe}
@@ -48,8 +48,8 @@
         \item Idea: Fiddle around with parameters
         \item \texttt{hog.blockStride = Size(16, 28)}
         \item \texttt{hog.nbins = 20}
-        \item \texttt{hog.nbins = 200}
         \item \texttt{hog.winSigma = 30}
+        \item polynomial svm kernel with margin
         \item[$\Rightarrow$] $F_1 = 0.976542$ (\# 7), 9.109s (\#3)
     \end{itemize}
 \end{frame}
@@ -62,9 +62,8 @@
             \item Euclidean distance was good
             \item Cosine distance was worse than Euclidean distance
         \end{itemize}
-        \item Preprocessing: Crop image to middle 60\%; flatten RGB image
+        \item Preprocessing: Grayscale + Crop image to middle 60\%; 
         \item 150 components, only first 200 images because of server speed
-        \item Grayscale
         \item[$\Rightarrow$] $1- \text{EER} = 0.640878$ (\# 6)
     \end{itemize}
 \end{frame}

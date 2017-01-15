@@ -7,7 +7,7 @@
 \usepackage[T1]{fontenc}    % this is needed for correct output of umlauts in pdf
 
 \title{Practical of CV:HCI}
-\subtitle{WS 2016 / 2017}
+\subtitle{WS 2016 / 2017 \# 4 (2.477745)}
 \author[Martin\,Thoma \& Bettina\,Weller\& Yang\,Zhang]
 {%
   \texorpdfstring{
@@ -39,7 +39,7 @@
         \item $256 \times 256$ bins (H and S, V is ommitted)
         \item $p_\text{Skin}(H, V) = \frac{\text{\# skin pixels in bin } (H, V)}{\text{\# skin pixels in bin } (H, V) + \text{\# non-skin pixels in bin } (H, V)}$
         \item Don't forget to multiply $p_\text{Skin}(H, V)$ with 256.
-        \item[$\Rightarrow$] $F_1 = 0.860325$ (\# 8)
+        \item[$\Rightarrow$] $F_1 = 0.860325$ (\# 12)
     \end{itemize}
 \end{frame}
 
@@ -47,8 +47,10 @@
     \begin{itemize}
         \item Idea: Fiddle around with parameters
         \item \texttt{hog.blockStride = Size(16, 28)}
-        \item \texttt{hog.nbins = 60}
-        \item[$\Rightarrow$] $F_1 = 0.945133$ (\# 13), 13.409s (\#4)
+        \item \texttt{hog.nbins = 20}
+        \item \texttt{hog.nbins = 200}
+        \item \texttt{hog.winSigma = 30}
+        \item[$\Rightarrow$] $F_1 = 0.976542$ (\# 7), 9.109s (\#3)
     \end{itemize}
 \end{frame}
 
@@ -58,11 +60,12 @@
         \item Distance measure
         \begin{itemize}
             \item Euclidean distance was good
-            \item Cosine distance gave EER of 0.5
+            \item Cosine distance was worse than Euclidean distance
         \end{itemize}
-        \item Preprocessing: Crop image to middle 90\%; flatten RGB image
-        \item 100 components, only first 200 images because of server speed
-        \item[$\Rightarrow$] $1- \text{EER} = 0.570645$ (\# 5)
+        \item Preprocessing: Crop image to middle 60\%; flatten RGB image
+        \item 150 components, only first 200 images because of server speed
+        \item Grayscale
+        \item[$\Rightarrow$] $1- \text{EER} = 0.640878$ (\# 6)
     \end{itemize}
 \end{frame}
 

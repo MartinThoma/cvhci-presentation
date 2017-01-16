@@ -39,7 +39,7 @@
         \item $256 \times 256$ bins (H and S, V is ommitted)
         \item $p_\text{Skin}(H, V) = \frac{\text{\# skin pixels in bin } (H, V)}{\text{\# skin pixels in bin } (H, V) + \text{\# non-skin pixels in bin } (H, V)}$
         \item Don't forget to multiply $p_\text{Skin}(H, V)$ with 256.
-        \item[$\Rightarrow$] $F_1 = 0.860325$ (\# 12)
+        \item[$\Rightarrow$] $F_1 = 0.875242$
     \end{itemize}
 \end{frame}
 
@@ -50,7 +50,7 @@
         \item \texttt{hog.nbins = 20}
         \item \texttt{hog.winSigma = 30}
         \item polynomial svm kernel with margin
-        \item[$\Rightarrow$] $F_1 = 0.976542$ (\# 7), 9.109s (\#3)
+        \item[$\Rightarrow$] $F_1 = 0.976542$ 
     \end{itemize}
 \end{frame}
 
@@ -64,7 +64,7 @@
         \end{itemize}
         \item Preprocessing: Grayscale + Crop image to middle 60\%; 
         \item 150 components, only first 200 images because of server speed
-        \item[$\Rightarrow$] $1- \text{EER} = 0.640878$ (\# 6)
+        \item[$\Rightarrow$] $1- \text{EER} = 0.641847$ 
     \end{itemize}
 \end{frame}
 
